@@ -1,13 +1,13 @@
 require("dotenv").config();
 const conn = require("./db/conn");
 
+const Ususario = require("/models/Usuario")
 conn
-.authenticate()
+.sync()
 .then(() => {
-console.log("Conectado ao banco de dados com sucesso!");
+ console.log("Conectado e sincronizado!");
 })
+
 .catch((err) => {
-
-console.log("Ocorreu um erro: " + err);
-
+    console.log("Ocorreu um erro: " + err);
 });

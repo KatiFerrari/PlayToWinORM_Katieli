@@ -12,4 +12,4 @@ const Usuario = conn.define("Usuario", {
     },
 });
 
-module.esports = Usuario;
+module.exports = Usuario;

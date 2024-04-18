@@ -5,7 +5,6 @@ const Jogo = require("./models/Jogo")
 const express = require("express");
 const app = express();
 
-// Middleware para analisar o corpo da solicitação
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -44,6 +43,7 @@ app.post("/jogos/novo", async (req, res) => {
             precoBase,
         };
         const jogo = await Jogo.create(dadosJogo);
+        console.log(jogo)
 
         res.send("Jogo inserido sob o id " + jogo.id);
     } catch (error) {
